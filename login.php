@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login - Blog Site</title>
+    <title>Ugh Thoughts</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="auth-wrapper">
