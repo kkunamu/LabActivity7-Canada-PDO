@@ -1,0 +1,222 @@
+/* style.css */
+
+/* Core Typography & Background */
+body {
+    font-family: "Lucida Grande", "Lucida Sans Unicode", "GNU Unifont", Verdana, Helvetica, sans-serif;
+    background-color: #edece9; /* Classic AO3 off-white/gray */
+    color: #2a2a2a;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+}
+
+/* Links */
+a {
+    color: #1111cc;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+}
+
+a:visited {
+    color: #551a8b;
+}
+
+a:hover {
+    color: #990000;
+    border-bottom: 1px solid #990000;
+}
+
+/* Layout Wrapper */
+.container {
+    width: 75%; /* Expands the wrapper to 3/4 of the screen width */
+    max-width: 1600px; /* Prevents it from getting too stretched on ultra-wide monitors */
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-left: 1px solid #dddddd;
+    border-right: 1px solid #dddddd;
+    min-height: 100vh;
+}
+
+/* Header & Navigation */
+.header-bar {
+    background-color: #990000; /* AO3 Red */
+    color: #ffffff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 5px solid #cccccc;
+}
+
+.header-bar h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: normal;
+}
+
+.header-bar a {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.header-bar a:hover {
+    color: #ffffff;
+    background-color: #660000;
+    border-bottom: none;
+}
+
+/* Forms & Inputs */
+form {
+    padding: 15px;
+    background: #f4f4f4;
+    border: 1px solid #dddddd;
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #cccccc;
+    box-sizing: border-box;
+    font-family: inherit;
+    margin-bottom: 10px;
+}
+
+input:focus, textarea:focus {
+    outline: 1px solid #990000;
+    border-color: #990000;
+}
+
+/* AO3 Style Buttons */
+button {
+    background-color: #eeeeee;
+    color: #2a2a2a;
+    border: 1px solid #cccccc;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.9rem;
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,0.1);
+}
+
+button:hover {
+    color: #990000;
+    border-color: #990000;
+    box-shadow: inset 0 -1px 0 rgba(153,0,0,0.2);
+}
+
+/* Delete Button Specific */
+button.delete-btn {
+    background-color: #ffffff;
+    color: #990000;
+    border: 1px solid #cccccc;
+}
+
+button.delete-btn:hover {
+    background-color: #990000;
+    color: #ffffff;
+}
+
+/* Posts & Comments (The "Blurbs") */
+.post-blurb {
+    border: 1px solid #dddddd;
+    margin: 15px 20px;
+    padding: 15px;
+    background: #ffffff;
+}
+
+.post-header {
+    border-bottom: 1px solid #dddddd;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.post-header h3 {
+    margin: 0 0 5px 0;
+    color: #990000;
+}
+
+.post-meta {
+    font-size: 0.85rem;
+    color: #666666;
+}
+
+.post-content {
+    margin: 15px 0;
+}
+
+.post-actions {
+    font-size: 0.85rem;
+    text-align: right;
+    margin-top: 10px;
+    padding-top: 5px;
+    border-top: 1px dashed #dddddd;
+}
+
+/* General spacing and alerts */
+.error { color: #990000; font-weight: bold; border: 1px solid #990000; background: #fff0f0; padding: 10px; margin: 10px 20px; }
+.success { color: #008000; font-weight: bold; border: 1px solid #008000; background: #f0fff0; padding: 10px; margin: 10px 20px; }
+h2, h3, h4 { padding: 0 20px; }
+
+/* Floating Auth Cards */
+.auth-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #edece9;
+}
+
+.auth-card {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 450px;
+    border: 1px solid #dddddd;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.auth-card form {
+    border: none;
+    background: transparent;
+    margin-bottom: 0;
+    padding: 20px;
+}
+
+/* Post Grid Layout */
+.post-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 25px;
+    padding: 0 20px 20px 20px;
+}
+
+/* Ensure the cards stretch to equal height and push actions to the bottom */
+.post-grid .post-blurb {
+    margin: 0; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    border-radius: 4px;
+}
+
+@media (max-width: 1200px) {
+    .post-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .post-grid {
+        grid-template-columns: 1fr; /* 1 column on mobile screens */
+    }
+}
